@@ -1,0 +1,28 @@
+.heading
+{
+    font-size: 23px;
+    width: 100%;
+    margin:0px;
+}
+.note
+{
+    font-size: 15px;
+    color: slategray;
+}
+body{
+    background-size: cover;
+}
+.div_name
+{
+    float: left;
+
+}
+#name{
+    font-size:23px;
+    margin: 15px;
+}
+canvas{
+    border: solid, black;
+    box-shadow: 5px 10px #888888;
+    padding:2px
+}
