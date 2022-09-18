@@ -2,6 +2,7 @@ song = "";
 song2 = "";
 song1_status  = "";
 song2_status  = "";
+leftWristScore = 0;
 leftWristX = 0;
 leftWristY = 0;
 rightWristX = 0;
@@ -33,6 +34,8 @@ function gotPoses(results){
 		rightWristX = results[0].pose.rightWrist.x;
 		rightWristY = results[0].pose.rightWristY.y;
 		console.log("rightwristx = " + rightWristX +" rightwristY = " + rightWristY);
+
+		results[0].pose.keypoints[9].score;
 	}
 }
 function play() {
@@ -46,6 +49,14 @@ function draw() {
 	song2_status = song2.isPlaying();
 	fill("#FF0000");
 	stroke("#FF0000");
+	if(leftWristX > 0.2){
+		circle(leftWristX, leftWristY, 20);
+		song2.stop();
+		if(song1_status = false){
+			song1.play()
+			document.getElementById("song").innerHTML = "song 1"
+		}
+	}
 }
 function modelLoaded() {
 	console.log("poseNet is intialized.");
